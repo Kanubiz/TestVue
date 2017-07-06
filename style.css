@@ -1,0 +1,22 @@
+html, body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+div#app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#canvas {
+  width: 100%;
+  padding: 200px 20px;
+  text-align: center;
+  border: 1px solid #333;
+}

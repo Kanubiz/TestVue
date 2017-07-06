@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="https://unpkg.com/vue" charset="utf-8"></script>
+
+</head>
+
+<body>
+  <div id="app">
+
+
+    <h1>Principios do Vue</h1>
+
+    <!--Chamar uma função-->
+    <p>{{greet('morning')}}</p>
+
+    <!--Chamar data-->
+    <p>Nome: {{nome}}</p>
+    <p>Idade: {{idade}}</p>
+    <p>Ocupacao: {{ocupacao}}</p>
+
+    <!--Data Binding-->
+    <a v-bind:href='website'>Vamos ao Google</a>
+
+    <!--Podemos substituir o "v-bind:" por ":"-->
+    <input type="text" :value="ocupacao" />
+
+    <!--Chamar html-->
+    <p v-html="websiteTag"></p>
+
+
+
+    <p v-html="espaco"></p>
+
+
+
+    <h1>Eventos</h1>
+
+    <!--Evento Click > Metodo UMA VEZ-->
+    <button v-on:click.once="add(1)">Adicionar 1 Ano</button>
+
+    <!--Evento Click > Código JS -->
+    <!--Podemos substituir o "v-on:" por "@"-->
+    <button @click="idade--">Subtrair 1 Ano</button>
+
+    <!--Evento Double Click > Metodo -->
+    <button v-on:dblclick="add(10)">Adicionar 10 Anos</button>
+
+    <!--Evento Double Click > Código JS -->
+    <button @dblclick="idade -= 10">Subtrair 10 Anos</button>
+
+    <p>Eu tenho {{idade}} anos</p>
+
+    <!--Evento Mouse Move e mostra dentro do canvas as coordenadas do rato -->
+    <div id="canvas" v-on:mousemove="updateXY">{{x}},{{y}}</div>
+
+    <!--O click nesta hiperligação vai correr uma função e vai prevenir o utilizador de abrir o link-->
+    <a @click.prevent="click" href="http://www.google.pt">Site explicito 18+</a>
+
+
+
+    <p v-html="espaco"></p>
+
+
+
+    <h1>Eventos de Teclado</h1>
+    <label>Nome: {{name}}</label>
+    <input type="text" v-model="name">
+    <label>Idade: {{age}}</label>
+    <input type="text" v-model="age">
+
+
+
+    <p v-html="espaco"></p>
+
+
+
+    <h1>Computed Properties</h1>
+
+    <button @click="a++">Add to A</button>
+    <button @click="b++">Add to B</button>
+    <p>A - {{a}}</p>
+    <p>B - {{b}}</p>
+
+    <!--Com métodos: (Ver diferença na consola, não esquecer tirar os comentários dos métodos e por nos computed properties) -->
+    <!-- <p>Age + A = {{addToA()}}</p>
+    <p>Age + B = {{addToB()}}</p> -->
+
+    <!--Com Computed Properties: (Ver diferença na consola, não esquecer tirar os comentários dos computed properties e por nos metodos) -->
+    <p>Age + A = {{addToA}}</p>
+    <p>Age + B = {{addToB}}</p>
+
+
+
+
+
+
+
+
+
+
+  </div>
+  <script src="java.js" charset="utf-8"></script>
+</body>
+
+</html>
