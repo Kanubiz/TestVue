@@ -20,7 +20,7 @@ const app = new Vue({
       return 'Good ' + time + ' ' + this.nome
     },
     add: function(inc) {
-      this.idade += inc;;
+      this.idade += inc;
     },
     updateXY: function(event) {
       this.x = event.offsetX;
