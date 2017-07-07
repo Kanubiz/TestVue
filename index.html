@@ -79,14 +79,28 @@
     <p>Age + A = {{addToA}}</p>
     <p>Age + B = {{addToB}}</p>
 
-
-
-
-
-
-
-
-
+    <h1>Dynamic CSS</h1>
+    <h2>Example 1</h2>
+    <!--Mudar uma classe de CSS  -->
+    <div @click="available= !available" :class="{available: available}">
+      <span>Click me!</span>
+    </div>
+    <h2>Example 2</h2>
+    <!--Mudar uma classe de CSS com computed properties  -->
+    <button @click="available=!available" type="button" name="button">Toggle available</button>
+    <button @click="nearby = !nearby" type="button" name="button">Toggle nearby</button>
+    <div :class="compClasses">
+      <span>Duarte</span>
+    </div>
+    <h1>Conditionals</h1>
+    <button type="button" @click="error = !error" name="button">Toggle Error</button>
+    <button type="button" @click="success = !success" name="button">Toggle Success</button>
+    <!-- Retira por completo as tags to DOM -->
+    <!-- <p v-if="error">There has been an error</p>
+    <p v-else-if="success">Success!</p> -->
+    <!-- Adiciona "display:none" ao style -->
+    <p v-show="error">Errorr</p>
+    <p v-show="success">Success</p>
 
   </div>
   <script src="java.js" charset="utf-8"></script>

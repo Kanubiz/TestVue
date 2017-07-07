@@ -13,7 +13,11 @@ const app = new Vue({
     age: '',
     a: 0,
     b: 0,
-    ag: 20
+    ag: 20,
+    available: false,
+    nearby: false,
+    error: false,
+    success: false
   },
   methods: {
     greet: function(time) {
@@ -41,7 +45,7 @@ const app = new Vue({
     addToB: function(){
       console.log('B');
       return this.b + this.ag;
-    }*/
+    },*/
   },
   computed: {
     addToA: function() {
@@ -51,6 +55,12 @@ const app = new Vue({
     addToB: function() {
       console.log('B');
       return this.b + this.ag;
+    },
+    compClasses: function() {
+      return {
+        available: this.available,
+        nearby: this.nearby
+      }
     }
   }
 });
